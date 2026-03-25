@@ -1,0 +1,26 @@
+# Source Path Configuration for mobula-sentinel
+
+# Main entry point
+src/index.ts
+
+# Core API integration
+src/api/mobula.ts
+
+# Command implementations
+src/commands/check.ts
+src/commands/watch.ts
+src/commands/scout.ts
+
+# Utilities
+src/utils/config.ts
+src/utils/format.ts
+
+# Configuration files
+tsconfig.json
+package.json
+
+# Documentation
+README.md
+SKILL.md
+CHANGELOG.md
+SOURCES.md
