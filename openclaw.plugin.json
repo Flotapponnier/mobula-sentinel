@@ -1,107 +1,25 @@
 {
-  "name": "mobula-sentinel",
+  "id": "mobula-sentinel",
+  "name": "Mobula Sentinel",
   "version": "1.0.0",
-  "type": "code",
-  "description": "Autonomous crypto security guardian. Real-time rug detection, smart money wallet tracking, and new token scouting powered by Mobula API across 88+ blockchains.",
-  "author": "flotapponnier",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Flotapponnier/mobula-sentinel"
-  },
-  "homepage": "https://github.com/Flotapponnier/mobula-sentinel#readme",
-  "bugs": {
-    "url": "https://github.com/Flotapponnier/mobula-sentinel/issues"
-  },
-  "keywords": [
-    "crypto",
-    "security",
-    "defi",
-    "rug-detection",
-    "smart-money",
-    "token-analysis",
-    "blockchain",
-    "mobula",
-    "openclaw"
-  ],
-  "tags": [
-    "crypto",
-    "security",
-    "defi",
-    "wallet",
-    "rug-detection",
-    "smart-money"
-  ],
-  "install": {
-    "type": "github",
-    "repo": "Flotapponnier/mobula-sentinel",
-    "commands": [
-      "npm install",
-      "npm run build",
-      "npm link"
-    ]
-  },
-  "env_vars": [
-    {
-      "name": "MOBULA_API_KEY",
-      "required": true,
-      "description": "Free Mobula API key — https://admin.mobula.io"
+  "description": "Autonomous crypto security guardian — rug detection, smart money tracking, and new token scouting via Mobula API across 88+ blockchains.",
+  "entry": "./dist/index.js",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "apiKey": {
+        "type": "string",
+        "description": "Mobula API key — get one free at https://admin.mobula.io"
+      },
+      "telegramBotToken": {
+        "type": "string",
+        "description": "Telegram bot token for alerts (optional)"
+      },
+      "telegramChatId": {
+        "type": "string",
+        "description": "Telegram chat ID (optional)"
+      }
     },
-    {
-      "name": "TELEGRAM_BOT_TOKEN",
-      "required": false,
-      "description": "Telegram bot token for alerts"
-    },
-    {
-      "name": "TELEGRAM_CHAT_ID",
-      "required": false,
-      "description": "Telegram chat ID to receive alerts"
-    }
-  ],
-  "commands": [
-    {
-      "name": "check",
-      "description": "Perform rug check on a token with risk score (0-100)",
-      "usage": "mobula-sentinel check --address <token_address> --blockchain <chain_name>",
-      "examples": [
-        "mobula-sentinel check --address 0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984 --blockchain ethereum",
-        "mobula-sentinel check --address 0x... --blockchain base --json"
-      ]
-    },
-    {
-      "name": "watch",
-      "description": "Monitor smart money wallets for significant movements",
-      "usage": "mobula-sentinel watch --wallets <wallet1,wallet2,...>",
-      "examples": [
-        "mobula-sentinel watch --wallets 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045 --interval 300",
-        "mobula-sentinel watch --wallets 0xabc...,0xdef... --min-amount 10000 --min-winrate 60"
-      ]
-    },
-    {
-      "name": "scout",
-      "description": "Scout for new safe tokens on specified blockchains",
-      "usage": "mobula-sentinel scout [--chains <chain1,chain2>]",
-      "examples": [
-        "mobula-sentinel scout --chains base,ethereum --min-liquidity 100000",
-        "mobula-sentinel scout --chains solana --max-risk 30 --interval 600"
-      ]
-    }
-  ],
-  "capabilities": [
-    "Token security analysis across 88+ blockchains",
-    "Real-time wallet transaction monitoring",
-    "Automated new token discovery",
-    "Risk scoring with 14+ security criteria",
-    "Telegram notifications",
-    "Persistent state management"
-  ],
-  "requirements": {
-    "node": ">=18.0.0"
-  },
-  "security": {
-    "read_only": true,
-    "no_wallet_access": true,
-    "no_private_keys": true,
-    "open_source": true
+    "required": ["apiKey"]
   }
 }
