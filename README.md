@@ -1,19 +1,19 @@
-# 🛡️ Mobula Sentinel
+# Mobula Sentinel
 
 > Autonomous crypto security guardian for OpenClaw agents
 
 Mobula Sentinel is a production-ready CLI tool that helps you avoid rug pulls, track smart money, and discover safe tokens early. Powered by [Mobula API](https://mobula.io) across 88+ blockchains.
 
-## ✨ Features
+## Features
 
-- **🔍 Rug Detection**: Analyze tokens with 14+ security criteria and get a risk score (0-100)
-- **💰 Smart Money Tracking**: Monitor whale wallets and get alerted on significant moves
-- **🆕 Token Scouting**: Auto-discover newly listed tokens that pass safety checks
-- **📱 Telegram Alerts**: Optional real-time notifications via Telegram
-- **💾 Stateful**: Remembers seen tokens and transactions between restarts
-- **🚦 Rate Limiting**: Respects API limits with automatic retry logic
+- **Rug Detection**: Analyze tokens with 14+ security criteria and get a risk score (0-100)
+- **Smart Money Tracking**: Monitor whale wallets and get alerted on significant moves
+- **Token Scouting**: Auto-discover newly listed tokens that pass safety checks
+- **Telegram Alerts**: Optional real-time notifications via Telegram
+- **Stateful**: Remembers seen tokens and transactions between restarts
+- **Rate Limiting**: Respects API limits with automatic retry logic
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -53,7 +53,7 @@ mobula-sentinel watch --wallets 0xabc...,0xdef... --interval 300
 mobula-sentinel scout --chains base,solana --min-liquidity 100000 --max-risk 30
 ```
 
-## 📖 Commands
+## Commands
 
 ### `check` - Rug Pull Detection
 
@@ -69,17 +69,17 @@ mobula-sentinel check --address <token_address> --blockchain <chain_name> [optio
 - `--json`: Output as JSON
 
 **Risk Scoring:**
-- 🔴 **HIGH RISK (60-100)**: Critical red flags (honeypot, self-destruct, unlocked LP)
-- 🟡 **MODERATE RISK (30-59)**: Some concerns (high fees, concentrated holdings)
-- 🟢 **LOW RISK (0-29)**: Appears safe with standard tokenomics
+- **HIGH RISK (60-100)**: Critical red flags (honeypot, self-destruct, unlocked LP)
+- **MODERATE RISK (30-59)**: Some concerns (high fees, concentrated holdings)
+- **LOW RISK (0-29)**: Appears safe with standard tokenomics
 
 **Example output:**
 ```
-🟢 LOW RISK (score: 18/100)
+LOW RISK (score: 18/100)
 Token: 0x4f3a120E72C76c22ae802D129F599BFDbc31cb81
 Chain: ethereum
 
-✅ Positive points:
+Positive points:
   • Not a honeypot
   • Liquidity locked
   • Normal fees (2% buy / 2% sell)
@@ -111,7 +111,7 @@ mobula-sentinel watch --wallets <wallet1,wallet2,...> [options]
 
 **Example output:**
 ```
-💰 SMART MONEY MOVEMENT
+SMART MONEY MOVEMENT
 
 Wallet: 0xabc123... (Win rate 7d: 73% | Label: Smart Money)
 
@@ -121,7 +121,7 @@ Amount: $45,230
 Chain: Ethereum
 Tx: 0x789...
 
-📊 Wallet stats:
+Wallet stats:
   • PnL 7d: +$128,000
   • Winning trades: 73%
 ```
@@ -148,27 +148,27 @@ mobula-sentinel scout [options]
 
 **Example output:**
 ```
-🆕 NEW SAFE TOKEN DETECTED
+NEW SAFE TOKEN DETECTED
 
 Token: $NEWTOKEN
 Name: New Token
 Chain: Base
 Address: 0x123...
 
-💧 Liquidity: $127,000
-📈 Volume 1h: $45,000
-🔒 Risk score: 18/100
+Liquidity: $127,000
+Volume 1h: $45,000
+Risk score: 18/100
 
-✅ Checks passed:
+Checks passed:
   • Non-honeypot
   • LP locked
   • Normal fees (2% buy / 2% sell)
   • Distributed holdings (top 10: 23%)
 
-🔗 DexScreener: https://dexscreener.com/base/0x123...
+DexScreener: https://dexscreener.com/base/0x123...
 ```
 
-## 🔐 Security Criteria
+## Security Criteria
 
 The risk scoring algorithm evaluates 14+ security factors:
 
@@ -190,7 +190,7 @@ The risk scoring algorithm evaluates 14+ security factors:
 - Moderate concentration (top 10 > 50%)
 - Non-renounced contract
 
-## 🌍 Supported Blockchains
+## Supported Blockchains
 
 88+ chains including:
 - Ethereum, Base, Solana
@@ -200,7 +200,7 @@ The risk scoring algorithm evaluates 14+ security factors:
 
 Full list: [docs.mobula.io/blockchains](https://docs.mobula.io/blockchains)
 
-## 📱 Telegram Integration
+## Telegram Integration
 
 Enable Telegram alerts by setting environment variables:
 
@@ -211,7 +211,7 @@ export TELEGRAM_CHAT_ID="your_chat_id"
 
 All commands will automatically send formatted alerts when configured.
 
-## 🛠️ Development
+## Development
 
 ### Build from source
 
@@ -228,21 +228,21 @@ npm run build
 npm run dev -- check --address 0x... --blockchain ethereum
 ```
 
-## 📊 Rate Limits
+## Rate Limits
 
 - Free tier: 100 requests/minute
 - Auto rate-limiting: 1 request/second max
 - Automatic retry on 429 errors (60s wait)
 - Exponential backoff for server errors
 
-## 💾 Data Persistence
+## Data Persistence
 
 State files stored in `~/.mobula-sentinel/`:
 - `state.json`: Tracks seen tokens and last transactions
 - Automatically saved on shutdown
 - Persists between restarts
 
-## 🤖 OpenClaw Integration
+## OpenClaw Integration
 
 This plugin is designed for OpenClaw agents. Users can interact naturally:
 
@@ -252,21 +252,21 @@ This plugin is designed for OpenClaw agents. Users can interact naturally:
 
 The agent will automatically call the appropriate commands.
 
-## 🔗 Links
+## Links
 
 - [Mobula API Docs](https://docs.mobula.io)
 - [Get API Key](https://admin.mobula.io)
 - [GitHub Repository](https://github.com/flotapponnier/mobula-sentinel)
 - [Report Issues](https://github.com/flotapponnier/mobula-sentinel/issues)
 
-## 📄 License
+## License
 
 MIT License - Free to use and modify
 
-## 🤝 Contributing
+## Contributing
 
 Contributions welcome! Please feel free to submit a Pull Request.
 
 ---
 
-Built with ❤️ for the OpenClaw ecosystem | Powered by [Mobula API](https://mobula.io)
+Built for the OpenClaw ecosystem | Powered by [Mobula API](https://mobula.io)
