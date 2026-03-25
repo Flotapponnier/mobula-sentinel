@@ -33,8 +33,13 @@
     "smart-money"
   ],
   "install": {
-    "type": "npm",
-    "package": "mobula-sentinel"
+    "type": "github",
+    "repo": "Flotapponnier/mobula-sentinel",
+    "commands": [
+      "npm install",
+      "npm run build",
+      "npm link"
+    ]
   },
   "env_vars": [
     {
